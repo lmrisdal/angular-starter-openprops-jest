@@ -7,7 +7,3 @@ const appComponent = appComponentFixture.debugElement.componentInstance
 test('should create', () => {
   expect(appComponent).toBeTruthy()
 })
-
-test(`the title is 'ConnXio`, () => {
-  expect(appComponent.title).toEqual('ConnXio')
-})
