@@ -1,6 +1,6 @@
 {
   "name": "conn-xio",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --hmr",
@@ -11,7 +11,10 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watchAll",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "e2e": "ng e2e",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +26,7 @@
     "@angular/platform-browser": "^14.1.0",
     "@angular/platform-browser-dynamic": "^14.1.0",
     "@angular/router": "^14.1.0",
+    "open-props": "^1.4.12",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -36,9 +40,11 @@
     "@angular-eslint/template-parser": "14.0.2",
     "@angular/cli": "~14.1.2",
     "@angular/compiler-cli": "^14.1.0",
+    "@cypress/schematic": "2.0.2",
     "@types/jest": "^28.1.6",
     "@typescript-eslint/eslint-plugin": "5.29.0",
     "@typescript-eslint/parser": "5.29.0",
+    "cypress": "latest",
     "eslint": "^8.18.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
