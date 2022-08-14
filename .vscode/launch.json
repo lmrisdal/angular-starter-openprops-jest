@@ -14,7 +14,15 @@
       "name": "test",
       "type": "chrome",
       "request": "launch",
+      "postDebugTask": "terminate",
       "preLaunchTask": "npm: test"
+    },
+    {
+      "name": "e2e",
+      "type": "chrome",
+      "request": "launch",
+      "postDebugTask": "terminate",
+      "preLaunchTask": "npm: e2e"
     }
   ]
 }
