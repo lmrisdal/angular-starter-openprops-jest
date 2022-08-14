@@ -1,5 +1,10 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-yarn lint
-yarn test
+npx lint-staged --quiet ||
+(
+    echo -e "\n❌ Prettier formatting failed!\n"
+    false;
+)
+
+echo -e "✅ Prettier formatting successful!"
