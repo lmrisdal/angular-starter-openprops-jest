@@ -20,6 +20,11 @@ test('getColorPreference should return string valid theme', () => {
   expect(themeService.getColorPreference()).toMatch(/light|dark|dim|auto/)
 })
 
+test('getColorPreference should return from local storage if exists', () => {
+  localStorage.setItem('theme-preference', 'dark')
+  expect(themeService.getColorPreference()).toMatch(/dark/)
+})
+
 test('setPreference should update localstorage', () => {
   expect(localStorage.getItem('theme-preference')).toBeFalsy()
   themeService.setPreference()
