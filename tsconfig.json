@@ -18,7 +18,21 @@
     "importHelpers": true,
     "target": "es2020",
     "module": "es2020",
-    "lib": ["es2020", "dom"]
+    "lib": ["es2020", "dom"],
+    "paths": {
+      "@environment/*": ["src/environments/*"],
+      "@scss/*": ["src/assets/scss/*"],
+      "@core/*": ["src/app/core/*"],
+      "@models/*": ["src/app/core/models/*"],
+      "@enums/*": ["src/app/core/enums/*"],
+      "@services/*": ["src/app/core/services/*"],
+      "@guards/*": ["src/app/core/guards/*"],
+      "@layout/*": ["src/app/core/layout/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@components/*": ["src/app/shared/components/*"],
+      "@pipes/*": ["src/app/shared/pipes/*"],
+      "@features/*": ["src/app/features/*"]
+    }
   },
   "exclude": ["cypress", "./cypress.config.ts"],
   "angularCompilerOptions": {
