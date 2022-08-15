@@ -12,10 +12,6 @@ test('should create', () => {
   expect(themeService).toBeTruthy()
 })
 
-test('theme should have value', () => {
-  expect(themeService.theme).toBeTruthy()
-})
-
 test('getColorPreference should return string valid theme', () => {
   expect(themeService.getColorPreference()).toMatch(/light|dark|dim|auto/)
 })
@@ -27,7 +23,7 @@ test('getColorPreference should return from local storage if exists', () => {
 
 test('setPreference should update localstorage', () => {
   expect(localStorage.getItem('theme-preference')).toBeFalsy()
-  themeService.setPreference()
+  themeService.setPreference('dark')
   expect(localStorage.getItem('theme-preference')).toBeTruthy()
 })
 
@@ -35,6 +31,6 @@ test('reflectPreference should set attribute', () => {
   expect(document.documentElement.getAttribute('color-scheme')).toBeFalsy()
   themeService.reflectPreference()
   expect(document.documentElement.getAttribute('color-scheme')).toEqual(
-    themeService.theme
+    themeService.getColorPreference()
   )
 })

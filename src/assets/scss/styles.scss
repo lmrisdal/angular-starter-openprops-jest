@@ -1,5 +1,11 @@
 /* 
-    THIS FILE SHOULD ONLY BE USED TO IMPORT STYLES
+    THIS FILE SHOULD ONLY BE USED TO IMPORT OTHER STYLES
 */
-@import 'variables.scss';
-@import 'theme.scss';
+@import '_globals.scss';
+@import '_theme.scss';
+
+// open-props
+@import 'open-props/style';
+@import 'open-props/normalize';
+@import 'open-props/colors';
+@import 'open-props/gradients';

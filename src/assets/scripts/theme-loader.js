@@ -1,4 +1,12 @@
 /*eslint-env es2020*/
+
+/*
+  This script is used in index.html to make sure the theme is loaded before the app
+  to prevent flashing between light/dark modes.
+  
+  Taken and modified from https://github.com/argyleink/gui-challenges/tree/main/theme-switch/public
+*/
+
 const storageKey = 'theme-preference'
 
 const getColorPreference = () => {
@@ -10,6 +18,7 @@ const getColorPreference = () => {
 }
 
 const setPreference = () => {
+  console.log('setting preference to: ', theme.value)
   localStorage.setItem(storageKey, theme.value)
   reflectPreference()
 }
@@ -37,7 +46,9 @@ window.onload = () => {
 // sync with system changes
 window
   .matchMedia('(prefers-color-scheme: dark)')
-  .addEventListener('change', () => {
+  .addEventListener('change', ({ matches }) => {
+    console.log('matches', matches)
+    console.log('change', localStorage.getItem(storageKey))
     theme.value = getColorPreference()
     setPreference()
   })

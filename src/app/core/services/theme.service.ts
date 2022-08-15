@@ -6,8 +6,6 @@ const storageKey = 'theme-preference'
   providedIn: 'root',
 })
 export class ThemeService {
-  theme: string = this.getColorPreference()!
-
   getColorPreference() {
     if (localStorage.getItem(storageKey))
       return localStorage.getItem(storageKey)
@@ -17,13 +15,17 @@ export class ThemeService {
         : 'light'
   }
 
-  setPreference() {
-    localStorage.setItem(storageKey, this.theme!)
+  setPreference(theme: string) {
+    console.log('setPreference', theme)
+    localStorage.setItem(storageKey, theme)
     this.reflectPreference()
   }
 
   reflectPreference() {
-    document.documentElement.setAttribute('color-scheme', this.theme!)
+    document.documentElement.setAttribute(
+      'color-scheme',
+      this.getColorPreference()!
+    )
     // document
     //   .querySelector('#theme-toggle')
     //   ?.setAttribute('aria-label', this.theme!)

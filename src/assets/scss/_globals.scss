@@ -1,0 +1,16 @@
+html {
+  block-size: 100%;
+  color: var(--text1);
+  background-color: var(--surface1);
+  accent-color: var(--brand);
+  font-family: system-ui, sans-serif;
+  box-sizing: border-box;
+  transition: all 150ms var(--ease-out-5);
+  transition-property: background-color, color;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
