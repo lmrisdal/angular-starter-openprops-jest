@@ -16,7 +16,6 @@ export class ThemeService {
   }
 
   setPreference(theme: string) {
-    console.log('setPreference', theme)
     localStorage.setItem(storageKey, theme)
     this.reflectPreference()
   }
@@ -26,8 +25,5 @@ export class ThemeService {
       'color-scheme',
       this.getColorPreference()!
     )
-    // document
-    //   .querySelector('#theme-toggle')
-    //   ?.setAttribute('aria-label', this.theme!)
   }
 }

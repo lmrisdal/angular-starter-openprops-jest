@@ -7,25 +7,55 @@ import { ThemeService } from '@core/services/theme.service'
   standalone: true,
   imports: [CommonModule],
   template: `
-    <form id="theme-switcher" (change)="setTheme($event)">
-      <div><h3>Theme switcher</h3></div>
+    <form id="theme-switcher" (change)="setTheme($event.target)">
+      <h3>Theme switcher:</h3>
       <div>
-        <div>
-          <input checked type="radio" id="auto" name="theme" value="auto" />
-          <label for="auto">Auto</label>
-        </div>
-        <div>
-          <input type="radio" id="light" name="theme" value="light" />
-          <label for="light">Light</label>
-        </div>
-        <div>
-          <input type="radio" id="dark" name="theme" value="dark" />
-          <label for="dark">Dark</label>
-        </div>
-        <div>
-          <input type="radio" id="dim" name="theme" value="dim" />
-          <label for="dim">Dim</label>
-        </div>
+        <input
+          checked
+          type="radio"
+          id="auto"
+          name="theme"
+          value="auto"
+          [checked]="themeService.getColorPreference() === 'auto'" />
+        <label for="auto"
+          >Auto (switches light/dark based on OS preference)</label
+        >
+      </div>
+      <div>
+        <input
+          type="radio"
+          id="light"
+          name="theme"
+          value="light"
+          [checked]="themeService.getColorPreference() === 'light'" />
+        <label for="light">Light</label>
+      </div>
+      <div>
+        <input
+          type="radio"
+          id="dark"
+          name="theme"
+          value="dark"
+          [checked]="themeService.getColorPreference() === 'dark'" />
+        <label for="dark">Dark</label>
+      </div>
+      <div>
+        <input
+          type="radio"
+          id="dim"
+          name="theme"
+          value="dim"
+          [checked]="themeService.getColorPreference() === 'dim'" />
+        <label for="dim">Dim</label>
+      </div>
+      <div>
+        <input
+          type="radio"
+          id="grape"
+          name="theme"
+          value="grape"
+          [checked]="themeService.getColorPreference() === 'grape'" />
+        <label for="grape">Grape</label>
       </div>
     </form>
   `,
@@ -33,18 +63,11 @@ import { ThemeService } from '@core/services/theme.service'
     `
       form {
         display: flex;
-        height: 100vh;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-      }
-      form > div {
-        display: flex;
         flex-direction: column;
+        padding: 10px;
         gap: 5px;
       }
-      form > div > div {
+      form > div {
         display: flex;
         align-items: center;
         gap: 5px;
@@ -53,8 +76,9 @@ import { ThemeService } from '@core/services/theme.service'
   ],
 })
 export class ThemeSwitcherComponent {
-  constructor(private themeService: ThemeService) {}
-  setTheme(ev: any) {
-    this.themeService.setPreference(ev.target.value)
+  constructor(public themeService: ThemeService) {}
+
+  setTheme(event: any) {
+    this.themeService.setPreference((event as HTMLInputElement).value)
   }
 }
