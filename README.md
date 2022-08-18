@@ -1,27 +1,61 @@
-# Angular
+# Angular 14 Starter
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2.
+> An Angular starter kit featuring [Angular 14](https://angular.io/), [Angular Router](https://angular.io/api/router), [Open-Props](https://open-props.style/), [Jest](https://jestjs.io/), [Cypress](https://www.cypress.io/), [ESlint](https://eslint.org/) and [Prettier](https://prettier.io/).
 
-## Development server
+Quickstart a project in seconds and focus on features, not on frameworks or tools
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Getting started
 
-## Code scaffolding
+### 1. Install dependencies
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Yarn:
 
-## Build
+```bash
+yarn install
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- NPM: First delete yarn.lock in project root and then:
 
-## Running unit tests
+```bash
+npm install
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### 2. Launch development server:
 
-## Running end-to-end tests
+```bash
+yarn start
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+or
 
-## Further help
+```bash
+npm start
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### 3. Project structure
+
+```
+dist/                        compiled version
+docs/                        project docs and coding guides
+cypress/                         end-to-end tests
+src/                         project source code
+|- app/                      app components
+|  |- @core/                 core module (core services, models, and components)
+|  |- @shared/               shared module (common components, directives and pipes)
+|  |- @features/*            app features. Separate modules per app feature
+|  |- app.component.*        app root component (shell)
+|  |- app.module.ts          app root module definition
+|  |- app-routing.module.ts  app routes
+|  +- ...                    additional modules and components
+|- assets/                   app assets (styles, images, fonts etc.)
+|- assets/scss/styles.scss   global style entry point
+|- environments/             values for various build environments
+|- index.html                html entry point
+|- main.ts                   app entry point
++- polyfills.ts              polyfills needed by Angular
++- .eslintrc.json            ESLint config file
++- .prettierrc.json          Prettier config file
++- jest.config.js            Jest config file
++- cypress.config.ts         Cypress config file
++- tsconfig.*.json           tsconfig files
+```
