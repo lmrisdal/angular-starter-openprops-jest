@@ -57,5 +57,5 @@ src/                         project source code
 |- .prettierrc.json          Prettier config file
 |- jest.config.js            Jest config file
 |- cypress.config.ts         Cypress config file
-|- tsconfig.*.json           tsconfig files
++- tsconfig.*.json           tsconfig files
 ```
