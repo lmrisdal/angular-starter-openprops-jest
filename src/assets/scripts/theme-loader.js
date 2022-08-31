@@ -18,17 +18,12 @@ const getColorPreference = () => {
 }
 
 const setPreference = () => {
-  console.log('setting preference to: ', theme.value)
   localStorage.setItem(storageKey, theme.value)
   reflectPreference()
 }
 
 const reflectPreference = () => {
   document.firstElementChild.setAttribute('color-scheme', theme.value)
-
-  document
-    .querySelector('#theme-toggle')
-    ?.setAttribute('aria-label', theme.value)
 }
 
 const theme = {
