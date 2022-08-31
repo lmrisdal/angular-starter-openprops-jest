@@ -37,7 +37,7 @@ npm start
 ```
 dist/                        compiled version
 docs/                        project docs and coding guides
-cypress/                         end-to-end tests
+cypress/                     end-to-end tests
 src/                         project source code
 |- app/                      app components
 |  |- @core/                 core module (core services, models, and components)
@@ -52,10 +52,10 @@ src/                         project source code
 |- environments/             values for various build environments
 |- index.html                html entry point
 |- main.ts                   app entry point
-+- polyfills.ts              polyfills needed by Angular
-+- .eslintrc.json            ESLint config file
-+- .prettierrc.json          Prettier config file
-+- jest.config.js            Jest config file
-+- cypress.config.ts         Cypress config file
-+- tsconfig.*.json           tsconfig files
+|- polyfills.ts              polyfills needed by Angular
+|- .eslintrc.json            ESLint config file
+|- .prettierrc.json          Prettier config file
+|- jest.config.js            Jest config file
+|- cypress.config.ts         Cypress config file
+|- tsconfig.*.json           tsconfig files
 ```
